@@ -1,0 +1,17 @@
+ARSENAL BOWLING BY BONORED'S - INSTALLATION SIMPLE
+
+ETAPE UNIQUE DE PUBLICATION
+1. Depuis un PC, ouvrez https://app.netlify.com/drop
+2. Glissez le fichier ZIP complet dans la page.
+3. Netlify affiche une adresse HTTPS. Envoyez cette adresse aux utilisateurs.
+
+IPHONE
+Ouvrir l'adresse dans Safari > Partager > Sur l'écran d'accueil > Ajouter.
+
+ANDROID
+Ouvrir l'adresse dans Chrome ou Edge > menu > Installer l'application.
+
+PC
+Ouvrir l'adresse dans Edge ou Chrome > Installer dans la barre d'adresse.
+
+L'application affiche désormais automatiquement les bonnes étapes selon l'appareil.
