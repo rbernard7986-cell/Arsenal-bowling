@@ -16,9 +16,25 @@
  .balls,.forms{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.card{padding:13px;border-radius:13px}.grid{gap:9px}.quick{grid-template-columns:1fr 1fr}.quick button{min-height:94px;padding:10px 6px}.actions .btn{flex:1;min-height:45px}.recommend .pct{font-size:22px}.map{height:300px}
  input,select,textarea{font-size:16px;min-height:45px}button{touch-action:manipulation}
  .scroll{margin:0 -5px}.scroll table{min-width:560px}
- .modal{padding:0;align-items:flex-end}.modalbox{height:94dvh;max-height:94dvh;border-radius:18px 18px 0 0;padding:15px 15px 0;overflow-y:auto;-webkit-overflow-scrolling:touch}.modal-actions{bottom:0;margin-left:-15px;margin-right:-15px;padding:12px 15px calc(12px + env(safe-area-inset-bottom))}.modal-actions .btn{min-height:50px}.choice-flow{grid-template-columns:1fr;gap:9px}.choice-card.best{order:2;transform:none}.choice-card.lower{order:1}.choice-card.upper{order:3}.choice-card.unavailable:first-child{order:1}.choice-card.unavailable:last-child{order:3}.choice-arrow{font-size:26px}.lane-rule{grid-template-columns:1fr}
+ .modal{padding:8px;align-items:flex-end}.modalbox{max-height:92dvh;border-radius:18px 18px 0 0;padding:15px;padding-bottom:calc(15px + env(safe-area-inset-bottom))}
 }
-.choice-flow{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:12px;align-items:stretch;margin-top:14px}.choice-card{position:relative;background:#091827;border:1px solid var(--line);border-radius:15px;padding:16px;text-align:center;min-width:0}.choice-card h3{margin:8px 0}.choice-card small{display:block;color:var(--muted)}.choice-card.best{border:3px solid var(--gold);background:linear-gradient(160deg,#263519,#122b2a);box-shadow:0 0 26px #ffc85735;transform:scale(1.03)}.best-label{display:inline-block;background:var(--gold);color:#111;padding:5px 9px;border-radius:99px;font-size:11px;font-weight:900}.best-score{font-size:34px;color:var(--green);font-weight:900;margin:5px}.choice-arrow{font-size:34px;color:var(--gold);font-weight:900}.choice-card.unavailable{opacity:.58;border-style:dashed}.choice-card.unavailable small{margin-top:8px}.decision-help{text-align:center;color:var(--muted)}.lane-rule{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}.lane-rule span{background:#142c46;border:1px solid #335273;border-radius:12px;padding:12px;text-align:center}.modal-actions{position:sticky;bottom:-18px;z-index:4;background:#10243af5;border-top:1px solid var(--line);padding:12px 0 calc(4px + env(safe-area-inset-bottom));margin-top:12px}</style>
+
+.decision-help{text-align:center;color:var(--muted)}
+.five-choice-flow{display:grid;grid-template-columns:auto repeat(5,minmax(145px,1fr)) auto;gap:9px;align-items:stretch;margin-top:14px}
+.arsenal-choice{min-width:0;background:#091827;border:1px solid var(--line);border-radius:15px;padding:14px 10px;text-align:center;display:flex;flex-direction:column;justify-content:center;min-height:210px}
+.arsenal-choice h3{margin:8px 0}.arsenal-choice small{color:var(--muted)}.choice-bsi{font-size:20px;font-weight:900;color:var(--blue)}
+.best-choice{border:3px solid var(--gold);background:linear-gradient(160deg,#263519,#122b2a);box-shadow:0 0 26px #ffc85742;transform:scale(1.04);z-index:2}
+.best-ribbon{display:inline-block;background:var(--gold);color:#111;padding:5px 8px;border-radius:99px;font-size:10px;font-weight:900}.best-score{font-size:30px;color:var(--green);font-weight:900;margin:4px}.outer-choice{opacity:.82}.empty-slot{border-style:dashed;opacity:.42;color:var(--muted)}
+.flow-arrow{display:flex;align-items:center;color:var(--gold);font-weight:900;white-space:nowrap}.lane-rule{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}.lane-rule span{background:#142c46;border:1px solid #335273;border-radius:12px;padding:12px;text-align:center}
+#ballModal .modalbox{display:flex;flex-direction:column;overflow:hidden}#ballModal #ballForm{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:2px 2px 14px}#ballModal .modal-actions{flex:0 0 auto;margin:0 -18px -18px;padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:#10243a;border-top:1px solid var(--line);box-shadow:0 -8px 20px #0006;z-index:5}#ballModal .modal-actions .btn{min-height:48px}
+
+@media(max-width:580px){
+ .five-choice-flow{display:flex;overflow-x:auto;gap:8px;margin-left:-13px;margin-right:-13px;padding:10px 50vw 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+ .five-choice-flow .arsenal-choice{flex:0 0 74vw;max-width:300px;min-height:205px;scroll-snap-align:center}.five-choice-flow .flow-arrow{flex:0 0 auto}.best-choice{transform:none}
+ .lane-rule{grid-template-columns:1fr}
+ #ballModal{padding:0;align-items:flex-end}#ballModal .modalbox{width:100%;height:96dvh;max-height:96dvh;border-radius:18px 18px 0 0;padding:14px 14px 0}#ballModal #ballForm{display:grid;grid-template-columns:1fr;gap:10px;padding-bottom:16px}#ballModal .modal-actions{margin:0 -14px;padding:12px 14px calc(12px + env(safe-area-inset-bottom));display:grid;grid-template-columns:1fr 1fr;gap:8px}#ballModal .modal-actions .btn{width:100%;margin:0}
+}
+</style>
 </head><body><div class="app">
 <div class="top"><div class="brand">🎳 Arsenal Bowling <span>by BonoRed's</span></div><div class="status" id="saveStatus">Local • prêt</div></div>
 <div class="installbar" id="installBar">
@@ -29,7 +45,7 @@
 </div>
 <div class="localWarning" id="localWarning">
  <strong>⚠ Ouverture locale détectée</strong>
- <span>Sur iPhone et Android, certaines fonctions peuvent être bloquées. Publiez d’abord l’application sur GitHub Pages ou un hébergement HTTPS, puis ouvrez l’adresse obtenue.</span>
+ <span>Sur iPhone et Android, certaines fonctions peuvent être bloquées. Publiez d’abord le ZIP sur Netlify Drop, puis ouvrez l’adresse HTTPS obtenue.</span>
 </div><nav class="tabs" id="tabs"></nav>
 <main>
 <section class="page active" data-page="competition"><div class="grid">
@@ -56,7 +72,7 @@
 </div></div><div class="toast" id="toast"></div><div class="modal" id="ballModal"><div class="modalbox"><h2 id="ballTitle">Nouvelle boule</h2><div class="forms" id="ballForm"></div><div class="actions modal-actions"><button class="btn green" onclick="saveBall()">Enregistrer</button><button class="btn ghost" onclick="closeBall()">Annuler</button></div></div></div>
 <script>
 'use strict';
-const VERSION=4, KEY='arsenalBowlingV2', BACKUPS='arsenalBowlingBackups';
+const VERSION=5, KEY='arsenalBowlingV2', BACKUPS='arsenalBowlingBackups';
 const tabs=[['competition','🎯 Choix'],['arsenal','🎳 Arsenal'],['games','📝 Parties'],['analysis','📈 Stats'],['builder','🛠 Builder'],['maintenance','🧽 Entretien'],['backup','💾 Sauvegarde']];
 let db={version:VERSION,balls:[],games:[],updatedAt:null},editId=null;
 const opts={cover:[['pearl','Pearl'],['hybrid','Hybrid'],['solid','Solid']],core:[['sym','Symétrique'],['asym','Asymétrique']],surface:[['polish','Polish'],['4000','4000 / compound'],['3000','3000'],['2000','2000'],['1000','1000'],['500','500']]};
@@ -94,13 +110,9 @@ function role(b){let s=bsi(b);if(s>84)return'🚀 Heavy Oil Monster';if(s>70)ret
 function trackPos(b){return clamp((({pearl:78,hybrid:53,solid:28}[b.cover]||50)+({polish:15,'4000':8,'3000':2,'2000':-5,'1000':-12,'500':-18}[b.surface]||0)),5,95)}
 function need(){
  let x=50;
- // Volume sur 4 niveaux : critère principal de puissance.
  x+=({treshuile:25,huile:10,faible:-10,sec:-25})[$('qVolume').value]||0;
- // Plus le huilage est long, plus la boule doit créer de traction.
  x+=({court:-14,moyen:0,long:12,treslong:22})[$('qLength').value]||0;
- // Brunswick procure généralement plus de friction qu'AMF.
  x+= $('qLane').value==='Brunswick'?-5:3;
- // La puissance nécessaire diminue à mesure que la piste s'ouvre et brûle.
  x+=({frais:8,transition:-4,brule:-20})[$('qState').value]||0;
  return clamp(Math.round(x),0,100)
 }
@@ -108,16 +120,18 @@ function learned(ball,cond){const g=db.games.filter(x=>x.ballId===ball.id);if(g.
 function recommend(){
  if(!db.balls.length){$('recommendations').innerHTML='<div class="empty">Ajoutez d’abord une boule à votre arsenal.</div>';return}
  const target=need(),cond={length:$('qLength').value,state:$('qState').value,lane:$('qLane').value};
- const ranked=[...db.balls].map(b=>{const l=learned(b,cond),power=bsi(b),fit=clamp(100-Math.abs(power-target)*1.25+l.bonus,0,99);return{b,power,fit:Math.round(fit),l}}).sort((a,b)=>a.power-b.power);
- const best=[...ranked].sort((a,b)=>b.fit-a.fit||Math.abs(a.power-target)-Math.abs(b.power-target))[0];
- const lower=[...ranked].filter(x=>x.power<best.power).sort((a,b)=>b.power-a.power)[0]||null;
- const upper=[...ranked].filter(x=>x.power>best.power).sort((a,b)=>a.power-b.power)[0]||null;
- function choice(x,type){
-  if(!x)return `<div class="choice-card unavailable"><div class="choice-arrow">${type==='lower'?'←':'→'}</div><b>${type==='lower'?'Aucune boule plus faible':'Aucune boule plus forte'}</b><small>Zone non couverte dans votre arsenal</small></div>`;
-  const title=type==='lower'?'Si la boule roule trop tôt':'Si la boule glisse trop';
-  return `<div class="choice-card ${type}"><div class="choice-arrow">${type==='lower'?'←':'→'}</div><small>${title}</small><h3>${esc(x.b.brand)} ${esc(x.b.model)}</h3><span class="tag">BSI ${x.power}</span><span class="tag">${role(x.b)}</span></div>`
+ const all=[...db.balls].map(b=>{const l=learned(b,cond),power=bsi(b),fit=clamp(100-Math.abs(power-target)*1.25+l.bonus,0,99);return{b,power,fit:Math.round(fit),l}}).sort((a,b)=>a.power-b.power||a.b.model.localeCompare(b.b.model));
+ const best=[...all].sort((a,b)=>b.fit-a.fit||Math.abs(a.power-target)-Math.abs(b.power-target))[0];
+ const bestIndex=all.indexOf(best);
+ const slots=[all[bestIndex-2]||null,all[bestIndex-1]||null,best,all[bestIndex+1]||null,all[bestIndex+2]||null];
+ function card(x,index){
+  if(!x)return `<div class="arsenal-choice empty-slot"><span>${index<2?'← Pas de boule plus faible':'Pas de boule plus forte →'}</span></div>`;
+  const isBest=index===2;
+  const distance=Math.abs(index-2);
+  const hint=index<2?'BSI inférieur':index>2?'BSI supérieur':'Recommandation principale';
+  return `<div class="arsenal-choice ${isBest?'best-choice':''} ${distance===2?'outer-choice':''}">${isBest?'<div class="best-ribbon">✓ MEILLEUR CHOIX</div>':''}<small>${hint}</small><h3>${esc(x.b.brand)}<br>${esc(x.b.model)}</h3><div class="choice-bsi">BSI ${x.power}</div>${isBest?`<div class="best-score">${x.fit}%</div><p>${x.l.text}</p><b>Confiance : ${x.l.confidence}</b>`:`<span class="tag">${role(x.b)}</span>`}</div>`
  }
- $('recommendations').innerHTML=`<h2>Besoin piste : ${target}/100</h2><p class="decision-help">Les propositions sont classées du <b>BSI le plus faible</b> au <b>BSI le plus fort</b>.</p><div class="choice-flow">${choice(lower,'lower')}<div class="choice-card best"><div class="best-label">✓ MEILLEUR CHOIX</div><h3>${esc(best.b.brand)} ${esc(best.b.model)}</h3><div class="best-score">${best.fit}%</div><span class="tag">BSI ${best.power}</span><span class="tag">${role(best.b)}</span><p>${best.l.text}</p><b>Confiance : ${best.l.confidence}</b></div>${choice(upper,'upper')}</div><div class="lane-rule"><span>⬅️ <b>La boule roule trop tôt ?</b><br>Prenez la boule en dessous.</span><span><b>La boule glisse trop ?</b><br>Prenez la boule au-dessus. ➡️</span></div>`
+ $('recommendations').innerHTML=`<h2>Besoin piste : ${target}/100</h2><p class="decision-help">Vue élargie de l’arsenal, classée du <b>BSI le plus faible</b> au <b>BSI le plus fort</b>.</p><div class="five-choice-flow"><div class="flow-arrow left">← Plus faible</div>${slots.map(card).join('')}<div class="flow-arrow right">Plus forte →</div></div><div class="lane-rule"><span>⬅️ <b>La boule roule trop tôt ?</b><br>Choisissez une boule à gauche, avec un BSI inférieur.</span><span><b>La boule glisse trop ?</b><br>Choisissez une boule à droite, avec un BSI supérieur. ➡️</span></div>`
 }
 function openBall(id){editId=id||null;const b=db.balls.find(x=>x.id===id)||{};$('ballTitle').textContent=id?'Modifier la boule':'Nouvelle boule';for(const [el,key] of [['bBrand','brand'],['bModel','model'],['bPurchase','purchase'],['bGames','gamesCount'],['bCover','cover'],['bCore','core'],['bHook','hook'],['bSurface','surface'],['bOven','ovenDate'],['bResurface','resurfaceDate'],['bComments','comments']])$(el).value=b[key]??({cover:'hybrid',core:'sym',hook:5,surface:'4000',gamesCount:0}[key]??'');$('ballModal').classList.add('open')}function closeBall(){$('ballModal').classList.remove('open')}
 function saveBall(){if(!$('bBrand').value.trim()||!$('bModel').value.trim())return toast('Marque et modèle requis');const old=db.balls.find(x=>x.id===editId)||{};const b={...old,id:editId||uid(),brand:$('bBrand').value.trim(),model:$('bModel').value.trim(),purchase:$('bPurchase').value,gamesCount:n($('bGames').value),cover:$('bCover').value,core:$('bCore').value,hook:clamp(n($('bHook').value),1,10),surface:$('bSurface').value,ovenDate:$('bOven').value,resurfaceDate:$('bResurface').value,comments:$('bComments').value,surfaceHistory:old.surfaceHistory||[]};db.balls=editId?db.balls.map(x=>x.id===editId?b:x):[...db.balls,b];save();closeBall()}
@@ -152,7 +166,7 @@ function openInstallGuide(){
  $('installGuide').classList.add('open');action.onclick=null;
  if(location.protocol==='file:'){
   intro.textContent='Cette copie est ouverte comme un fichier. Pour que toutes les fonctions marchent sur téléphone, publiez le ZIP une seule fois.';
-  steps.innerHTML='<div class="installStep"><b>1</b><span>Sur un PC, ouvrez votre dépôt GitHub Pages.</span></div><div class="installStep"><b>2</b><span>Remplacez les fichiers index.html et service-worker.js, puis validez les changements.</span></div><div class="installStep"><b>3</b><span>Ouvrez sur le téléphone l’adresse HTTPS fournie.</span></div>';
+  steps.innerHTML='<div class="installStep"><b>1</b><span>Sur un PC, ouvrez app.netlify.com/drop.</span></div><div class="installStep"><b>2</b><span>Déposez le ZIP complet Arsenal Bowling.</span></div><div class="installStep"><b>3</b><span>Ouvrez sur le téléphone l’adresse HTTPS fournie.</span></div>';
   action.textContent='Compris';action.onclick=closeInstallGuide;return;
  }
  if(p==='ios'){
